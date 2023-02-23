@@ -1,0 +1,19 @@
+from tkinter import *
+
+window = Tk()
+window.title('Test')
+window.geometry('300x200')
+
+label = Label(
+  text = 'Нажми!',
+  fg = 'coral',
+  bg = 'black',
+  font = ('consolas', 25),
+  underline = 0
+)
+
+label.pack()
+
+window.mainloop()
+
+root.mainloop()
