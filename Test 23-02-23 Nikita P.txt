@@ -1,19 +1,31 @@
 from tkinter import *
+from random import *
+
+def change_1():
+  x = randint(0, 300)
+  y = randint(0, 300)
+  z = randint(0, 300)
+  w = randint(0, 300)
+  r = randint(0, 300)
+  e = randint(0, 300)
+  f = randint(1, 4)
+  canvas.delete("all")
+  lst = ['red', 'blue', 'green', 'black,', 'brown', 'pink', 'purple']
+  t = choice(lst)
+  if f == 1:
+    canvas.create_rectangle(x, y, z, w, fill=t)
+  elif f == 2:
+    canvas.create_polygon(x, y, z, w, r, e, fill=t)
+  elif f == 3:
+    canvas.create_oval(x, y, z, w, fill=t)
+  elif f == 4:
+    canvas.create_line(x, y, z, w, fill=t)
+    
 
 window = Tk()
-window.title('Test')
-window.geometry('300x200')
+canvas = Canvas(window, width= 500, height = 300, bg = 'white')
+canvas.pack()
 
-label = Label(
-  text = 'Нажми!',
-  fg = 'coral',
-  bg = 'black',
-  font = ('consolas', 25),
-  underline = 0
-)
-
-label.pack()
+Button(text='НАЖМИ!', command=change_1).pack()
 
 window.mainloop()
-
-root.mainloop()
